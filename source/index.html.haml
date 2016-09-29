@@ -1,62 +1,82 @@
-%header
+.banner
+  .banner-image
   .container
-    .row.text-xs-center.text-sm-left
-      .col-md-8
-        %h1= data.app.name
-        %p= data.app.tag_line
-      .col-md-4
-        = retina_image_tag 'app-store.png', width: 215, height: 72
+    %header
+      .row
+        .col-lg-8
+          = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
+          %h1= data.app.name
+          %p.tag-line= data.app.tag_line
+        .col-lg-4.text-xs-center.text-lg-right
+          -# = link_to '#', class: 'app-store-button' do
+          -#   = retina_image_tag 'app-store.png', width: 219, height: 76
+          .coming-soon-button
+            = retina_image_tag 'coming-soon.png', width: 219, height: 76
 
-%section#video.ipad
-  .container
-    %h2.sr-only Video of Statto
-    %iframe{ src: 'https://player.vimeo.com/video/183842052?title=0&byline=0&portrait=0', width: 640, height: 480, frameborder: 0, allowfullscreen: true }
+  #video
+    .container
+      %h2.sr-only Video of Statto
+      .ipad
+        %iframe{ src: 'https://player.vimeo.com/video/183842052?title=0&byline=0&portrait=0', width: 640, height: 480, frameborder: 0, allowfullscreen: true }
 
 %section#features
   .container
     %h2.sr-only Features and Testimonials
 
-    %figure.testimonial
-      %blockquote
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-      %figcaption
-        .testimonial-name Mario O‘Brien
-        = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
+    -# %figure.testimonial
+    -#   %blockquote
+    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
+    -#   %figcaption
+    -#     .testimonial-name Mario O‘Brien
+    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
-    %h3 Real-time Insights
-    %p Quickly switch views during a time-out to see visualised statistics for the game you are tracking, live. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more help you make informed tactical decisions on the sideline.
+    .feature.row
+      .col-lg-4.push-lg-8
+        %h3 Real-time Insights
+        %p Quickly switch views during a time-out to see visualised statistics for the game you are tracking, live. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more help you make informed tactical decisions on the sideline.
+      .col-lg-8.pull-lg-4
+        = retina_image_tag 'heatmap.png', class: 'img-fluid'
 
-    %figure.testimonial
-      %blockquote
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-      %figcaption
-        .testimonial-name Mario O‘Brien
-        = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
+    -# %figure.testimonial
+    -#   %blockquote
+    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
+    -#   %figcaption
+    -#     .testimonial-name Mario O‘Brien
+    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
-    %h3 Simple Player Selection
-    %p During half-time, check how players are performing to gauge their pitch-time. Filter players by how many points they’ve played to see who needs to get on and who’s being overworked.
-    %p
-      %strong Coming Soon:
-      Group players by role or line by assigning them tags like ‘D-line’, ‘handler’ or ‘tall’ then easily filter players to call balanced lines that best suit the moment.
+    .feature.row
+      .col-lg-4
+        %h3 Simple Player Selection
+        %p During half-time, check how players are performing to gauge their pitch-time. Filter players by how many points they’ve played to see who needs to get on and who’s being overworked.
+        %p
+          %strong Coming Soon:
+          Group players by role or line by assigning them tags like ‘D-line’, ‘handler’ or ‘tall’ then easily filter players to call balanced lines that best suit the moment.
+      .col-lg-8
+        = retina_image_tag 'player-stats.png', class: 'img-fluid'
 
-    %figure.testimonial
-      %blockquote
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-      %figcaption
-        .testimonial-name Mario O‘Brien
-        = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
+    -# %figure.testimonial
+    -#   %blockquote
+    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
+    -#   %figcaption
+    -#     .testimonial-name Mario O‘Brien
+    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
-    %h3 Pitch-level Detail
-    %p Draw plays on the pitch as they happen to record assists, hockey assists, turnovers, blocks and more. Record more detail than ever with less effort than tallying on paper.
-    %p No footage from a rainy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn out on the pitch.
+    .feature.row
+      .col-lg-4.push-lg-8
+        %h3 Pitch-level Detail
+        %p Draw plays on the pitch as they happen to record assists, hockey assists, turnovers, blocks and more. Record more detail than ever with less effort than tallying on paper.
+        %p No footage from a rainy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn out on the pitch.
+      .col-lg-8.pull-lg-4
+        .embed-responsive.embed-responsive-16by9
+          %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true }
+            %source{ src: 'assets/videos/chaining.mp4', type: 'video/mp4' }
 
 
 %section#pricing
   .container
-    %h2.sr-only Pricing
-    %p Try Statto <strong>free & unlimited for 1 month</strong>. Then, if you like it, just <strong>£30 per year</strong>.
+    %h2.text-xs-center Try Statto <strong>free & unlimited for 1 month</strong>. Then, if you like it, just <strong>£30 per year</strong>.
 
-    .row
+    .row.pricing-lists
       .col-md-6
         %h3 This includes:
         %ul
@@ -81,15 +101,26 @@
   .container
     .row
       .col-md-6
-        %h2 Get In Touch
-        %ul
-          %li= mail_to data.contact.email
-          %li= link_to "@#{data.contact.twitter}", "https://twitter.com/#{data.contact.twitter}"
-          %li= link_to data.contact.facebook, "https://facebook.com/#{data.contact.facebook}"
+        %h2 Get in Touch
+        %ul.social-list
+          %li
+            = link_to "mailto:#{data.contact.email}" do
+              %i.icon.icon-email
+              = data.contact.email
+
+          %li
+            = link_to "https://twitter.com/#{data.contact.twitter}" do
+              %i.icon.icon-twitter
+              = "@#{data.contact.twitter}"
+
+          %li
+            = link_to "https://facebook.com/#{data.contact.facebook}" do
+              %i.icon.icon-facebook
+              = data.contact.facebook
 
       .col-md-6
-        %h2 About the developer
-        = retina_image_tag 'sam-rayner.jpg', alt: 'Sam Rayner', width: 100, height: 100, class: 'img-circle pull-xs-left m-r-1 m-b-1'
+        %h2 The Developer
+        = retina_image_tag 'sam-rayner.jpg', alt: 'Sam Rayner', width: 100, height: 100, class: 'img-circle pull-xs-right m-l-1 m-b-1'
         %p #{link_to 'Sam Rayner', 'http://www.samrayner.com'} (“Toast”) has played Ultimate since 2009 including EUC 2015 and WUGC 2016 with GB Mixed. He works as a freelance iOS and Web developer in Sheffield, UK where he coaches the local club and university teams.
 
 

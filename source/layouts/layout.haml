@@ -30,5 +30,4 @@
   - body_classes = page_classes
   - body_classes += ' development' if development?
   %body{ class: body_classes }
-    .container
-      = yield
+    = yield

@@ -2,10 +2,242 @@
 @import "mixins";
 @import "bootstrap-custom";
 
-.ipad {
-  @include retina-background-image('ipad@1x.png', 'ipad.png');
+body {
+  background-color: $blue-pale;
+  font-weight: 100;
+  color: $gray-dark;
+  line-height: 1.4;
 }
 
-body.development .ipad {
-  background-image: image-url('ipad.png');
+a {
+  color: $teal;
+
+  &:hover, &:focus, &:active {
+    color: darken($teal, 10%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  color: $teal-dark;
+}
+
+h2, h3 {
+  font-size: 1.4rem;
+}
+
+strong, dt {
+  font-weight: 600;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.feature {
+  padding: 2rem 0;
+}
+
+#pricing {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-width: 1px 0;
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .pricing-lists {
+    margin-top: 2rem;
+
+    h3 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    ul {
+      padding-left: 1.3em;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+  }
+}
+
+#contact {
+  background-color: $green-pale;
+}
+
+#faq {
+  background-color: $blue-dark;
+  color: $gray-light;
+
+  h2 {
+    color: $gray-light;
+  }
+
+  dt {
+    color: white;
+    margin-top: 1.5rem;
+  }
+}
+
+footer {
+  background-color: $blue-darkest;
+  padding: 50px 0 30px;
+  color: rgba(255,255,255,0.3);
+}
+
+.banner {
+  background-color: $blue-dark;
+  position: relative;
+  margin-bottom: 150px;
+
+  header {
+    padding: 40px 0 20px;
+    position: relative;
+  }
+
+  h1 {
+    color: white;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .tag-line {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .app-icon {
+    border-radius: 17.54%;
+    float: left;
+    margin-right: 1.5rem;
+  }
+
+  .app-store-button, .coming-soon-button {
+    display: inline-block;
+    margin-top: 20px;
+
+    img {
+      border-radius: 5px;
+      border: 2px solid white;
+    }
+  }
+
+  .app-store-button {
+    background-color: black;
+
+    &:hover, &:focus {
+      background-color: $teal-dark;
+    }
+  }
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent no-repeat 50% 50%;
+  opacity: 0.15;
+  background-size: cover;
+  @include retina-background-image('gbx@1x.jpg', 'gbx.jpg');
+}
+
+.ipad {
+  background: no-repeat 50% 50%;
+  @include retina-background-image('ipad@1x.png', 'ipad.png');
+  background-size: contain;
+  height: 0;
+  width: 100%;
+  padding-top: 75%;
+  margin-top: -150px;
+  position: relative;
+  top: 150px;
+
+  iframe {
+    position: absolute;
+    top: 9.2%;
+    left: 9.2%;
+    width: 81.6%;
+    height: 81.6%;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    background-color: red;
+    position: absolute;
+    bottom: 3.1%;
+    left: -10px;
+    right: -10px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,1);
+  }
+}
+
+.social-list {
+  @include list-unstyled;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+
+  li {
+    margin-top: 1em;
+    line-height: 1em;
+    font-weight: 300;
+
+    .icon {
+      margin-right: 0.2em;
+    }
+  }
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.1em;
+  display: inline-block;
+  background: transparent no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.icon-email {
+  @include retina-background-image('icons/email@1x.png', 'icons/email.png');
+}
+
+.icon-twitter {
+  @include retina-background-image('icons/twitter@1x.png', 'icons/twitter.png');
+}
+
+.icon-facebook {
+  @include retina-background-image('icons/facebook@1x.png', 'icons/facebook.png');
+}
+
+body.development {
+  .banner-image {
+    background-image: image-url('gbx.jpg');
+  }
+
+  .ipad {
+    background-image: image-url('ipad.png');
+  }
+
+  .icon-email {
+    background-image: image-url('icons/email.png');
+  }
+
+  .icon-twitter {
+    background-image: image-url('icons/twitter.png');
+  }
+
+  .icon-facebook {
+    background-image: image-url('icons/facebook.png');
+  }
 }
