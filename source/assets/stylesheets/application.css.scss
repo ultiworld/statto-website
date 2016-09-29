@@ -3,5 +3,9 @@
 @import "bootstrap-custom";
 
 .ipad {
+  @include retina-background-image('ipad@1x.png', 'ipad.png');
+}
+
+body.development .ipad {
   background-image: image-url('ipad.png');
 }

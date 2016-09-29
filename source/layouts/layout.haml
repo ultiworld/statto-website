@@ -10,10 +10,10 @@
     %meta{ itemprop: 'description', content: data.site.description }/
     %meta{ itemprop: 'image', content: "#{data.site.root}/apple-touch-icon.png" }/
     %meta{ name: 'twitter:card', content: data.app.name }/
-    %meta{ name: 'twitter:site', content: data.contact.twitter }/
+    %meta{ name: 'twitter:site', content: "@#{data.contact.twitter}" }/
     %meta{ name: 'twitter:title', content: data.site.title }/
     %meta{ name: 'twitter:description', content: data.site.description }/
-    %meta{ name: 'twitter:creator', content: data.contact.twitter }/
+    %meta{ name: 'twitter:creator', content: "@#{data.contact.twitter}" }/
     %meta{ name: 'twitter:image', content: "#{data.site.root}/apple-touch-icon.png" }/
     %meta{ property: 'og:title', content: data.site.title }/
     %meta{ property: 'og:type', content: '' }/
@@ -26,6 +26,9 @@
 
     = stylesheet_link_tag :application
     = javascript_include_tag :application
-  %body{ class: page_classes }
+
+  - body_classes = page_classes
+  - body_classes += ' development' if development?
+  %body{ class: body_classes }
     .container
       = yield
