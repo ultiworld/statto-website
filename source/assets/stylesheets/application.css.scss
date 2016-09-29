@@ -7,6 +7,12 @@ body {
   font-weight: 100;
   color: $gray-dark;
   line-height: 1.4;
+  min-width: 320px;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 a {
@@ -44,8 +50,8 @@ section {
   border-width: 1px 0;
 
   h2 {
-    margin-top: 1rem;
     font-size: 1.5rem;
+    line-height: 1.2;
   }
 
   .pricing-lists {
@@ -96,27 +102,34 @@ footer {
   position: relative;
   margin-bottom: 150px;
 
-  header {
-    padding: 40px 0 20px;
+  .banner-title {
+    display: inline-block;
+    text-align: left;
+    padding-left: 120px;
     position: relative;
+
+    h1 {
+      color: white;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .app-icon {
+      border-radius: 17.54%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
 
-  h1 {
-    color: white;
-    font-size: 4rem;
-    line-height: 1;
+  header {
+    padding: 40px 0 20px;
   }
 
   .tag-line {
     color: rgba(255,255,255,0.7);
     font-size: 1.5rem;
     line-height: 1;
-  }
-
-  .app-icon {
-    border-radius: 17.54%;
-    float: left;
-    margin-right: 1.5rem;
   }
 
   .app-store-button, .coming-soon-button {

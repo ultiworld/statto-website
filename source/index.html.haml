@@ -1,13 +1,14 @@
 .banner
   .banner-image
   .container
-    %header
+    %header.text-xs-center.text-lg-left
       .row
         .col-lg-8
-          = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
-          %h1= data.app.name
-          %p.tag-line= data.app.tag_line
-        .col-lg-4.text-xs-center.text-lg-right
+          .banner-title.text-xs-left
+            = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
+            %h1= data.app.name
+            %p.tag-line= data.app.tag_line
+        .col-lg-4.text-lg-right
           -# = link_to '#', class: 'app-store-button' do
           -#   = retina_image_tag 'app-store.png', width: 219, height: 76
           .coming-soon-button
@@ -68,13 +69,16 @@
         %p No footage from a rainy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn out on the pitch.
       .col-lg-8.pull-lg-4
         .embed-responsive.embed-responsive-16by9
-          %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true }
+          %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true, controls: true, onplaying: 'this.controls=false' }
             %source{ src: 'assets/videos/chaining.mp4', type: 'video/mp4' }
 
 
 %section#pricing
   .container
-    %h2.text-xs-center Try Statto <strong>free & unlimited for 1 month</strong>. Then, if you like it, just <strong>£30 per year</strong>.
+    %h2.text-xs-center
+      Try Statto <strong>free & unlimited for 1 month</strong>.
+      %br.hidden-lg-up.hidden-sm-down/
+      Then, if you like it, just <strong>£30 per year</strong>.
 
     .row.pricing-lists
       .col-md-6
