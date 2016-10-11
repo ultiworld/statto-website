@@ -34,7 +34,7 @@
     .feature.row
       .col-lg-4.push-lg-8
         %h3 Real-time Insights
-        %p Quickly switch views during a time-out to see visualised statistics for the game you are tracking live. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more help you make informed tactical decisions on the sideline.
+        %p Quickly switch views during a time-out to see live stats for the game you are tracking. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more can help you make informed tactical decisions on the sideline.
       .col-lg-8.pull-lg-4
         = retina_image_tag 'heatmap.png', class: 'img-fluid'
 
@@ -47,11 +47,13 @@
 
     .feature.row
       .col-lg-4
-        %h3 Simple Player Selection
-        %p During half-time, check how players are performing to gauge their pitch-time. Filter players by how many points they’ve played to see who needs to get on and who’s being overworked.
-        %p
-          %strong Coming Soon:
-          Group players by role or line by assigning them tags like ‘D-line’, ‘handler’ or ‘tall’ then easily filter players to call balanced lines that best suit the moment.
+        :kramdown
+          ###Simple Player Selection
+
+          During half-time, check how players are performing to gauge their pitch-time. Filter players by how many points they've played to see who needs to get on and who's being overworked.
+
+          **Coming Soon:** Group players by role or line by assigning them tags like 'D-line', 'handler' or 'speedy' then easily filter players to call balanced lines that best suit the moment.
+
       .col-lg-8
         = retina_image_tag 'player-stats.png', class: 'img-fluid'
 
@@ -64,9 +66,13 @@
 
     .feature.row
       .col-lg-4.push-lg-8
-        %h3 Pitch-level Detail
-        %p Draw plays on the pitch as they happen to record assists, hockey assists, turnovers, blocks and more. Record more detail than ever with less effort than tallying on paper.
-        %p No footage from a rainy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn out on the pitch.
+        :kramdown
+          ###Pitch-level Detail
+
+          Draw plays on the pitch as they happen to record assists, secondary "hockey" assists, turnovers, blocks and more. Record more detail than ever with less effort than tallying on paper.
+
+          No video footage from a muddy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn on the pitch.
+
       .col-lg-8.pull-lg-4
         .embed-responsive.embed-responsive-16by9
           %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true, controls: true, onplaying: 'this.controls=false' }
@@ -76,30 +82,30 @@
 %section#pricing
   .container
     %h2.text-xs-center
-      Try Statto <strong>free & unlimited for 1 month</strong>.
+      Try Statto <strong>free for 2 weeks</strong>,
       %br.hidden-lg-up.hidden-sm-down/
-      Then, if you like it, just <strong>$39.99 per year</strong>.
+      then use it forever for just <strong>#{data.app.price}</strong>.
+
+    %p.pricing-hint
+      #{data.app.price} a bit pricey? Ask if your team will chip in a small amount each to see their own stats.
 
     .row.pricing-lists
       .col-md-6
-        %h3 This includes:
-        %ul
-          %li Free updates for the duration of your subscription with new features, improvements and fixes
-          %li Personal email support from the developer, Sam (a fellow Ultimate player in the UK)
-          %li No limitations on teams, games or players
-          %li No additional in-app purchases to unlock features
-          %li Ability to cancel at any time and continue to use Statto for the remainder of the paid year
+        :kramdown
+          ###This includes:
+          - Unlimited teams, games and players
+          - No recurring fees or additional in-app purchases to unlock features
+          - Regular free updates with bug fixes and enhancements
+          - Personal email support from the developer, Sam (a fellow Ultimate player in the UK)
 
       .col-md-6
-        %h3 Planned for future updates (with your support):
-        %ul
-          %li Statto for iPhone
-          %li Pull and time-out tracking
-          %li iPad split-screen multitasking support so you can watch and track game footage on the same screen
-          %li Custom player grouping to quickly filter players when calling lines
-          %li Beach and Indoor Ultimate modes
-          %li Game auto live-tweeting
-          %li ...and much more!
+        :kramdown
+          ###Planned for future updates (with your support):
+          - Statto for iPhone
+          - Pull and time-out tracking
+          - iPad split-screen multitasking support so you can watch and track game footage on the same screen
+          - Custom player grouping to quickly filter players when calling lines
+          - ...and much more!
 
 %section#contact
   .container
@@ -108,9 +114,9 @@
         %h2 Get in Touch
         %ul.social-list
           %li
-            = link_to "mailto:#{data.contact.email}" do
+            = link_to "mailto:#{percent_obfuscate(data.contact.email)}" do
               %i.icon.icon-email
-              = data.contact.email
+              = entity_obfuscate(data.contact.email)
 
           %li
             = link_to "https://twitter.com/#{data.contact.twitter}" do
@@ -125,8 +131,13 @@
       .col-md-6
         %h2.invisible The Developer
         = retina_image_tag 'sam-rayner.jpg', alt: 'Sam Rayner', width: 100, height: 100, class: 'img-circle pull-xs-right m-l-1 m-b-1'
-        %p #{link_to 'Sam Rayner', 'http://www.samrayner.com'} (Toast) has played Ultimate since 2009 including EUC 2015 and WUGC 2016 with GB Mixed. He works as a freelance iOS and Web developer in Sheffield, UK where he coaches the local club and university teams.
+        :kramdown
+          [Sam Rayner][sr] (Toast) has played Ultimate since 2009 including EUC 2015 and WUGC 2016 with [GB Mixed][gbx]. He works as an iOS and Web developer in Sheffield, UK where he coaches the [local club][steal] and [university teams][uni].
 
+          [sr]: http://www.samrayner.com
+          [gbx]: http://www.ukultimate.com/national_teams/gb_senior_squads_201516/gb_mixed_2016
+          [steal]: http://sheffieldultimate.co.uk
+          [uni]: http://ultimate.union.shef.ac.uk
 
 %section#faq
   .container
@@ -135,24 +146,30 @@
     %dl
       %dt Will Statto work on my iPhone, Android device or Windows tablet?
       %dd
-        %p Sorry, Statto is only available for the iPad at the moment. Support for the iPhone is planned for the near future! I’m afraid I don’t plan to release a version for Android or Windows devices though.
+        :kramdown
+          Sorry, Statto is only available for the iPad at the moment. Support for the iPhone is planned for the near future! I'm afraid I don't plan to release a version for Android or Windows devices.
 
       %dt Why is Statto so expensive?!
       %dd
-        %p I understand, most apps on the App Store are very cheap, if not free. For niche apps like Statto such low pricing is unsustainable and even popular ones end up neglected. I want to support users and improve Statto for years.
-        %p If you’re a coach, consider asking the club or university to cover the expense. Your teammates might also be willing to pitch in a little each season to see their own individual stats.
+        :kramdown
+          I understand, most apps on the App Store are very cheap, if not free. For niche apps like Statto such low pricing is unsustainable and even popular ones end up neglected. I want to support users and improve Statto for years.
+
+          If you're a coach, consider asking the club or university to cover the expense. Your team might also be willing to pitch in a small amount to see their own stats.
 
       %dt Can I track two teams at once?
       %dd
-        %p Statto is designed to only track one team at a time. Tracking both sides of a game is too frantic to do live! If you need to track both, consider filming the game and watching it through twice.
+        :kramdown
+          Statto is designed to only track one team at a time. Tracking both sides of a game is too frantic to do live. If you need to track both, consider filming the game and watching it through twice.
 
       %dt Do the stats I track get uploaded anywhere?
       %dd
-        %p Not unless you share them yourself! Your data is all stored locally on your iPad.
+        :kramdown
+          Not unless you share them yourself! Your data is all stored locally on your iPad to protect your team's privacy. There are plans to make sharing stats between teammates or publically easier in future.
 
       %dt I want to do my own analysis. Can I get at the raw data?
       %dd
-        %p Absolutely! You can export all of the raw stats in CSV format from inside the app. You can also back up the SQL file that Statto uses to store the data so you can query it yourself if you’re a nerd like me. If you have any more questions about doing your own data analysis, email me at #{ mail_to data.contact.email }.
+        :kramdown
+          Absolutely! You can export all of the raw stats in CSV format from inside the app. If you have any more questions about doing your own data analysis, feel free to email me at #{ link_to entity_obfuscate(data.contact.email), "mailto:#{percent_obfuscate(data.contact.email)}" }.
 
 %footer
   .container

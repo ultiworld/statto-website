@@ -7,6 +7,16 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 set :haml, { format: :html5, attr_wrapper: '"' }
 
+set :markdown_engine, :kramdown
+set :markdown, { smartypants: true, fenced_code_blocks: true }
+module Haml::Filters::Kramdown
+  include Haml::Filters::Base
+
+  def render(text)
+    Kramdown::Document.new(text).to_html
+  end
+end
+
 configure :development do
   activate :livereload
 end
