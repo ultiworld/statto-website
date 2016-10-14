@@ -31,3 +31,4 @@
   - body_classes += ' development' if development?
   %body{ class: body_classes }
     = yield
+    = partial 'google_analytics'
