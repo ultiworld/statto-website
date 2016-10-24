@@ -84,15 +84,15 @@
     %h2.text-xs-center
       Try Statto <strong>free for 2 weeks</strong>,
       %br.hidden-lg-up.hidden-sm-down/
-      then use it forever for just <strong>#{data.app.price}</strong>.
+      then use it forever for just <strong class="price">#{data.app.price}</strong>.
 
     %p.pricing-hint
-      #{data.app.price} a bit pricey? Ask if your team will chip in a small amount each to see their own stats.
+      <span class="price">#{data.app.price}</span> a bit pricey? Ask if your team will chip in a small amount each to see their own stats.
 
     .row.pricing-lists
       .col-md-6
         :kramdown
-          ###This includes:
+          ###What you get:
           - Unlimited teams, games and players
           - No recurring fees or additional in-app purchases to unlock features
           - Regular free updates with bug fixes and enhancements
@@ -130,7 +130,7 @@
 
       .col-md-6
         %h2.invisible The Developer
-        = retina_image_tag 'sam-rayner.jpg', alt: 'Sam Rayner', width: 100, height: 100, class: 'img-circle pull-xs-right m-l-1 m-b-1'
+        = retina_image_tag 'sam-rayner.jpg', alt: 'Sam Rayner', width: 100, height: 100, class: 'rounded-circle float-xs-right ml-1 mb-1'
         :kramdown
           [Sam Rayner][sr] (Toast) has played Ultimate since 2009 including EUC 2015 and WUGC 2016 with [GB Mixed][gbx]. He works as an iOS and Web developer in Sheffield, UK where he coaches the [local club][steal] and [university teams][uni].
 

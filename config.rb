@@ -17,6 +17,8 @@ module Haml::Filters::Kramdown
   end
 end
 
+activate :sprockets
+
 configure :development do
   activate :livereload
 end
