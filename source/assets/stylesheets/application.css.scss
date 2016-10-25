@@ -55,7 +55,6 @@ section {
   }
 
   .pricing-hint {
-    text-align: center;
     color: $gray;
   }
 
@@ -137,22 +136,19 @@ footer {
     line-height: 1;
   }
 
-  .app-store-button, .coming-soon-button {
-    display: inline-block;
-    margin-top: 20px;
-
-    img {
-      border-radius: 5px;
-      border: 2px solid white;
-    }
-  }
-
   .app-store-button {
-    background-color: black;
+    margin-top: 15px;
+  }
+}
 
-    &:hover, &:focus {
-      background-color: $teal-dark;
-    }
+.app-store-button {
+  display: inline-block;
+  background-color: black;
+  border-radius: 7px;
+  border: 2px solid white;
+
+  &:hover, &:focus {
+    background-color: $teal-dark;
   }
 }
 

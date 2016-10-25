@@ -5,14 +5,13 @@
       .row
         .col-lg-8
           .banner-title.text-xs-left
-            = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
+            = link_to data.app.url do
+              = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
             %h1= data.app.name
             %p.tag-line= data.app.tag_line
         .col-lg-4.text-lg-right
-          -# = link_to '#', class: 'app-store-button' do
-          -#   = retina_image_tag 'app-store.png', width: 219, height: 76
-          .coming-soon-button
-            = retina_image_tag 'coming-soon.png', width: 219, height: 76
+          = link_to data.app.url, class: 'app-store-button' do
+            = retina_image_tag 'app-store.png', width: 219, height: 76
 
   #video
     .container
@@ -81,13 +80,17 @@
 
 %section#pricing
   .container
-    %h2.text-xs-center
-      Try Statto <strong>free for 2 weeks</strong>,
-      %br.hidden-lg-up.hidden-sm-down/
-      then use it forever for just <strong class="price">#{data.app.price}</strong>.
+    .text-xs-center.text-sm-left
+      = link_to data.app.url, class: 'app-store-button mb-1 float-sm-right' do
+        = retina_image_tag 'app-store.png', width: 164, height: 57
 
-    %p.pricing-hint
-      <span class="price">#{data.app.price}</span> a bit pricey? Ask if your team will chip in a small amount each to see their own stats.
+      %h2
+        Try Statto <strong>free for 2 weeks</strong>,
+        %br.hidden-lg-up.hidden-sm-down/
+        then use it forever for just <strong class="price">#{data.app.price}</strong>.
+
+      %p.pricing-hint
+        <span class="price">#{data.app.price}</span> a bit pricey? Ask if your team will chip in a small amount to see their stats.
 
     .row.pricing-lists
       .col-md-6
@@ -155,6 +158,11 @@
           I understand, most apps on the App Store are very cheap, if not free. For niche apps like Statto such low pricing is unsustainable and even popular ones end up neglected. I want to support users and improve Statto for years.
 
           If you're a coach, consider asking the club or university to cover the expense. Your team might also be willing to pitch in a small amount to see their own stats.
+
+      %dt What happens when my 2-week free trial expires?
+      %dd
+        :kramdown
+          You'll still be able to view and export stats for all of your teams, games and players but you won't be able to track any more games until you purchase Statto.
 
       %dt Can I track two teams at once?
       %dd

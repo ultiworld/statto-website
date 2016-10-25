@@ -1,13 +1,11 @@
 class Pricing
   @locales:
-    gb: '£29.99'
-    au: '$62.99'
-    ca: '$54.99'
-    us: '$39.99'
+    'en-gb': '£29.99'
+    'en-au': '$62.99'
+    'en-ca': '$54.99'
 
   @init: ->
-    code = navigator.language.replace('en-', '')
-    if price = Pricing.locales[code]
+    if price = Pricing.locales[navigator.language]
       $('.price').each ->
         $(this).text(price)
 
