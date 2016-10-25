@@ -10,9 +10,10 @@ body {
   min-width: 320px;
 }
 
-.container {
+.container-fluid {
   padding-left: 20px;
   padding-right: 20px;
+  max-width: 840px;
 }
 
 a {

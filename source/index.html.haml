@@ -1,26 +1,26 @@
 .banner
   .banner-image
-  .container
-    %header.text-xs-center.text-lg-left
+  .container-fluid
+    %header.text-xs-center.text-md-left
       .row
-        .col-lg-8
+        .col-md-8
           .banner-title.text-xs-left
             = link_to data.app.url do
               = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
             %h1= data.app.name
             %p.tag-line= data.app.tag_line
-        .col-lg-4.text-lg-right
+        .col-md-4.text-md-right
           = link_to data.app.url, class: 'app-store-button' do
             = retina_image_tag 'app-store.png', width: 219, height: 76
 
   #video
-    .container
+    .container-fluid
       %h2.sr-only Video of Statto
       .ipad
         %iframe{ src: 'https://player.vimeo.com/video/183842052?title=0&byline=0&portrait=0', width: 640, height: 480, frameborder: 0, allowfullscreen: true }
 
 %section#features
-  .container
+  .container-fluid
     %h2.sr-only Features and Testimonials
 
     -# %figure.testimonial
@@ -31,10 +31,10 @@
     -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
     .feature.row
-      .col-lg-4.push-lg-8
+      .col-md-4.push-md-8
         %h3 Real-time Insights
         %p Quickly switch views during a time-out to see live stats for the game you are tracking. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more can help you make informed tactical decisions on the sideline.
-      .col-lg-8.pull-lg-4
+      .col-md-8.pull-md-4
         = retina_image_tag 'heatmap.png', class: 'img-fluid'
 
     -# %figure.testimonial
@@ -45,7 +45,7 @@
     -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
     .feature.row
-      .col-lg-4
+      .col-md-4
         :kramdown
           ###Simple Player Selection
 
@@ -53,7 +53,7 @@
 
           **Coming Soon:** Group players by role or line by assigning them tags like 'D-line', 'handler' or 'speedy' then easily filter players to call balanced lines that best suit the moment.
 
-      .col-lg-8
+      .col-md-8
         = retina_image_tag 'player-stats.png', class: 'img-fluid'
 
     -# %figure.testimonial
@@ -64,7 +64,7 @@
     -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
     .feature.row
-      .col-lg-4.push-lg-8
+      .col-md-4.push-md-8
         :kramdown
           ###Pitch-level Detail
 
@@ -72,25 +72,27 @@
 
           No video footage from a muddy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn on the pitch.
 
-      .col-lg-8.pull-lg-4
+      .col-md-8.pull-md-4
         .embed-responsive.embed-responsive-16by9
           %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true, controls: true, onplaying: 'this.controls=false' }
             %source{ src: 'assets/videos/chaining.mp4', type: 'video/mp4' }
 
 
 %section#pricing
-  .container
+  .container-fluid
     .text-xs-center.text-sm-left
       = link_to data.app.url, class: 'app-store-button mb-1 float-sm-right' do
         = retina_image_tag 'app-store.png', width: 164, height: 57
 
       %h2
         Try Statto <strong>free for 2 weeks</strong>,
-        %br.hidden-lg-up.hidden-sm-down/
+        %br.hidden-lg-up.hidden-xs-down/
         then use it forever for just <strong class="price">#{data.app.price}</strong>.
 
       %p.pricing-hint
-        <span class="price">#{data.app.price}</span> a bit pricey? Ask if your team will chip in a small amount to see their stats.
+        <span class="price">#{data.app.price}</span> a bit pricey? Ask if your team will
+        %br.hidden-lg-up.hidden-xs-down/
+        chip in a small amount to see their stats.
 
     .row.pricing-lists
       .col-md-6
@@ -111,7 +113,7 @@
           - ...and much more!
 
 %section#contact
-  .container
+  .container-fluid
     .row
       .col-md-6
         %h2 Get in Touch
@@ -143,7 +145,7 @@
           [uni]: http://ultimate.union.shef.ac.uk
 
 %section#faq
-  .container
+  .container-fluid
     %h2 Frequently Asked Questions
 
     %dl
@@ -180,6 +182,6 @@
           Absolutely! You can export all of the raw stats in CSV format from inside the app. If you have any more questions about doing your own data analysis, feel free to email me at #{ link_to entity_obfuscate(data.contact.email), "mailto:#{percent_obfuscate(data.contact.email)}" }.
 
 %footer
-  .container
+  .container-fluid
     %small
       Copyright &copy; #{Date.today.year}, Sam Rayner. All rights reserved.
