@@ -45,6 +45,60 @@ section {
   padding: 2rem 0;
 }
 
+.testimonial {
+  position: relative;
+  padding-left: 100px;
+  margin-bottom: 2rem;
+
+  blockquote {
+    font-size: 1.6rem;
+    color: $orange;
+    font-style: italic;
+    font-weight: 10;
+
+    p:first-child::before {
+      content: '“'
+    }
+
+    p:first-child::after {
+      content: '“'
+    }
+  }
+
+  .testimonial-name {
+    color: $gray;
+    margin-top: -0.5rem;
+
+    &::before {
+      content: '– '
+    }
+  }
+
+  .testimonial-avatar {
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 0;
+
+    blockquote {
+      font-size: 1.4rem;
+    }
+
+    figcaption {
+      position: relative;
+      padding-left: 75px;
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
 #pricing {
   background-color: white;
   border: 1px solid rgba(0,0,0,0.15);
@@ -69,7 +123,7 @@ section {
     }
 
     ul {
-      padding-left: 1.3em;
+      padding-left: 1.3rem;
     }
 
     li {
@@ -172,9 +226,9 @@ footer {
   height: 0;
   width: 100%;
   padding-top: 75%;
-  margin-top: -150px;
+  margin-top: -160px;
   position: relative;
-  top: 150px;
+  top: 160px;
 
   iframe {
     position: absolute;
@@ -203,12 +257,12 @@ footer {
   margin-bottom: 2rem;
 
   li {
-    margin-top: 1em;
-    line-height: 1em;
+    margin-top: 1.6rem;
+    line-height: 1rem;
     font-weight: 300;
 
     .icon {
-      margin-right: 0.2em;
+      margin-right: 0.2rem;
     }
   }
 }

@@ -23,12 +23,13 @@
   .container-fluid
     %h2.sr-only Features and Testimonials
 
-    -# %figure.testimonial
-    -#   %blockquote
-    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-    -#   %figcaption
-    -#     .testimonial-name Mario O‘Brien
-    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
+    %figure.testimonial
+      %blockquote
+        :kramdown
+          We used Statto to help select the Dutch National Mixed team for WCBU and sent trialees screenshots of their individual stats afterwards. The feedback was overwhelmingly positive. I'm very impressed with the app.
+      %figcaption
+        .testimonial-name David Sparks, WUGC '16 Netherlands Open, WCBU '17 Netherlands Mixed
+        = retina_image_tag "david-sparks.jpg", class: 'testimonial-avatar rounded-circle', alt: 'David Sparks', width: 80, height: 80
 
     .feature.row
       .col-md-4.push-md-8
@@ -36,13 +37,6 @@
         %p Quickly switch views during a time-out to see live stats for the game you are tracking. Pitch heatmaps, pass completion rate, scoring efficiency percentages and more can help you make informed tactical decisions on the sideline.
       .col-md-8.pull-md-4
         = retina_image_tag 'heatmap.png', class: 'img-fluid'
-
-    -# %figure.testimonial
-    -#   %blockquote
-    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-    -#   %figcaption
-    -#     .testimonial-name Mario O‘Brien
-    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
     .feature.row
       .col-md-4
@@ -55,13 +49,6 @@
 
       .col-md-8
         = retina_image_tag 'player-stats.png', class: 'img-fluid'
-
-    -# %figure.testimonial
-    -#   %blockquote
-    -#     %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit quam eu nisl pellentesque aliquam.
-    -#   %figcaption
-    -#     .testimonial-name Mario O‘Brien
-    -#     = retina_image_tag "mario-o-brien.jpg", class: 'img-circle', alt: 'Mario O‘Brien', width: 80, height: 80
 
     .feature.row
       .col-md-4.push-md-8
