@@ -225,33 +225,33 @@ footer {
 
 .ipad {
   background: no-repeat 50% 50%;
-  @include retina-background-image('ipad@1x.png', 'ipad.png');
+  @include retina-background-image('devices@1x.png', 'devices.png');
   background-size: contain;
   height: 0;
-  width: 100%;
+  width: 105%;
   padding-top: 75%;
-  margin-top: -160px;
+  margin: -220px 0 0 -0.5%;
   position: relative;
-  top: 160px;
+  top: 220px;
 
   iframe {
     position: absolute;
-    top: 9.2%;
-    left: 9.2%;
-    width: 81.6%;
-    height: 81.6%;
+    top: 10.5%;
+    left: 7.4%;
+    width: 66%;
+    height: 69%;
   }
 
   &::after {
+    z-index: -1;
     content: '';
     display: block;
     height: 0;
-    background-color: red;
     position: absolute;
-    bottom: 3.1%;
-    left: -10px;
-    right: -10px;
-    box-shadow: 0 0 10px 1px rgba(0,0,0,1);
+    bottom: 15%;
+    left: 0;
+    right: 10%;
+    box-shadow: 0 0 15px 2px rgba(0,0,0,1);
   }
 }
 
@@ -299,7 +299,7 @@ body.development {
   }
 
   .ipad {
-    background-image: image-url('ipad.png');
+    background-image: image-url('devices.png');
   }
 
   .icon-email {
