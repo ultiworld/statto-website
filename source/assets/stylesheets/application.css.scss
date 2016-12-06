@@ -79,24 +79,6 @@ section {
     left: 0;
     top: 0.4rem;
   }
-
-  @include media-breakpoint-down(sm) {
-    padding-left: 0;
-
-    blockquote {
-      font-size: 1.4rem;
-    }
-
-    figcaption {
-      position: relative;
-      padding-left: 75px;
-    }
-
-    .testimonial-avatar {
-      width: 60px;
-      height: 60px;
-    }
-  }
 }
 
 #pricing {
@@ -159,7 +141,7 @@ footer {
 .banner {
   background-color: $blue-dark;
   position: relative;
-  margin-bottom: 150px;
+  margin-bottom: 110px;
 
   .banner-title {
     display: inline-block;
@@ -174,7 +156,7 @@ footer {
     }
 
     .app-icon {
-      border-radius: 17.54%;
+      border-radius: 22%;
       position: absolute;
       left: 0;
       top: 0;
@@ -230,9 +212,9 @@ footer {
   height: 0;
   width: 105%;
   padding-top: 75%;
-  margin: -220px 0 0 -0.5%;
+  margin-top: -190px;
   position: relative;
-  top: 220px;
+  top: 190px;
 
   iframe {
     position: absolute;
@@ -240,18 +222,6 @@ footer {
     left: 7.4%;
     width: 66%;
     height: 69%;
-  }
-
-  &::after {
-    z-index: -1;
-    content: '';
-    display: block;
-    height: 0;
-    position: absolute;
-    bottom: 15%;
-    left: 0;
-    right: 10%;
-    box-shadow: 0 0 15px 2px rgba(0,0,0,1);
   }
 }
 
@@ -291,6 +261,35 @@ footer {
 
 .icon-facebook {
   @include retina-background-image('icons/facebook@1x.png', 'icons/facebook.png');
+}
+
+@include media-breakpoint-down(sm) {
+  .banner {
+    margin-bottom: 30px;
+  }
+
+  .ipad {
+    margin-top: -80px;
+    top: 80px;
+  }
+
+  .testimonial {
+    padding-left: 0;
+
+    blockquote {
+      font-size: 1.4rem;
+    }
+
+    figcaption {
+      position: relative;
+      padding-left: 75px;
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
 
 body.development {
