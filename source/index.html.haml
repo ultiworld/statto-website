@@ -55,14 +55,12 @@
         :kramdown
           ###Pitch-level Detail
 
-          Draw plays on the pitch as they happen to record assists, secondary "hockey" assists, turnovers, blocks and more. Record more detail than ever with less effort than tallying on paper.
+          Simply tap on the pitch to record the locations of passes, blocks, stall outs and more with less effort than tallying on paper.
 
           No video footage from a muddy battle on Pitch 14? No problem. Review games back at home by scrolling through the Play By Play and see everything drawn on the pitch.
 
       .col-md-8.pull-md-4
-        .embed-responsive.embed-responsive-16by9
-          %video.embed-responsive-item{ width: 640, height: 360, autoplay: true, loop: true, controls: true, onplaying: 'this.controls=false' }
-            %source{ src: 'assets/videos/chaining.mp4', type: 'video/mp4' }
+        = retina_image_tag 'tracker.png', class: 'img-fluid img-bordered', width: 700, height: 396
 
     %figure.testimonial
       %blockquote
