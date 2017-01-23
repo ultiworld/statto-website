@@ -1,4 +1,0 @@
-@mixin retina-background-image($urls...) {
-  background-image: image-url(nth($urls, 2));
-  background-image: -webkit-image-set(#{image-url(nth($urls, 1))} 1x, #{image_url(nth($urls, 2))} 2x);
-}
