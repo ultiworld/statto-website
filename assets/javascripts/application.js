@@ -1,1 +1,1 @@
-(function(){var n;n=function(){function n(){}return n.locales={"en-gb":"\xa329.99","en-au":"$62.99","en-ca":"$54.99"},n.init=function(){var t;if(t=n.locales[navigator.language])return $(".price").each(function(){return $(this).text(t)})},n}(),$(function(){return n.init()})}).call(this);
+(function(){var n;n=function(){function n(){}return n.locales={"en-gb":"\xa329.99","en-au":"$47.99","en-ca":"$41.99"},n.init=function(){var t;if(t=n.locales[navigator.language])return $(".price").each(function(){return $(this).text(t)})},n}(),$(function(){return n.init()})}).call(this);
