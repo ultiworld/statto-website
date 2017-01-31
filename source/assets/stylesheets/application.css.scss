@@ -45,6 +45,7 @@ strong, dt {
 
 section {
   padding: 3rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .feature {
@@ -89,8 +90,6 @@ section {
 
 #pricing {
   background-color: white;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-width: 1px 0;
 
   h2 {
     font-size: 1.45rem;
@@ -103,20 +102,22 @@ section {
 
   .pricing-lists {
     margin-top: 2rem;
+  }
+}
 
-    h3 {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
+#pricing, #stats {
+  h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
 
-    ul {
-      padding-left: 1.3rem;
-    }
+  ul {
+    padding-left: 1.3rem;
+  }
 
-    li {
-      margin-bottom: 0.7rem;
-    }
+  li {
+    margin-bottom: 0.7rem;
   }
 }
 

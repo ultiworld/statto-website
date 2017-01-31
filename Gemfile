@@ -4,5 +4,5 @@ gem 'middleman'
 gem 'middleman-sprockets'
 gem 'middleman-livereload'
 gem 'middleman-gh-pages'
-gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'mini_magick', require: false
