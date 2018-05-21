@@ -5,9 +5,7 @@ class Pricing
     'en-ca': '$41.99'
 
   @init: ->
-    if price = Pricing.locales[navigator.language]
-      $('.price').each ->
-        $(this).text(price)
+    if price = Pricing.locales[navigator.language.toLowerCase()]
+    	element.innerHTML = price for element in document.getElementsByClassName('price')
 
-$ ->
-  Pricing.init()
+document.addEventListener('DOMContentLoaded', Pricing.init)
