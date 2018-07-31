@@ -1,0 +1,8 @@
+class StoreRedirect
+  @init: ->
+	if window.location.search == '?action=get'
+		window.location.href = '<%= data.app.url %>'
+	else if window.location.search == '?action=review'
+		window.location.href = '<%= data.app.url %>?action=write-review'
+
+document.addEventListener('load', StoreRedirect.init)

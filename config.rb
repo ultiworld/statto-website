@@ -18,6 +18,7 @@ module Haml::Filters::Kramdown
 end
 
 activate :sprockets
+activate :directory_indexes
 
 configure :development do
   activate :livereload
