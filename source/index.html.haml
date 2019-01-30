@@ -1,17 +1,5 @@
 .banner
-  .banner-image
-  .container-fluid
-    %header.text-center.text-md-left
-      .row
-        .col-md-8
-          .banner-title.text-left
-            = link_to data.app.url do
-              = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
-            %h1= data.app.name
-            %p.tag-line= data.app.tag_line
-        .col-md-4.text-md-right
-          = link_to data.app.url, class: 'app-store-button' do
-            = retina_image_tag 'app-store.png', width: 219, height: 76
+  = partial 'banner_content'
 
   #video
     .container-fluid
@@ -221,7 +209,4 @@
         :kramdown
           Absolutely! You can export all of the raw stats in CSV format from inside the app. If you have any more questions about doing your own data analysis, feel free to email me at #{ link_to entity_obfuscate(data.contact.email), "mailto:#{percent_obfuscate(data.contact.email)}" }.
 
-%footer
-  .container-fluid
-    %small
-      Copyright &copy; #{Date.today.year}, Sam Rayner. All rights reserved.
+= partial 'footer'

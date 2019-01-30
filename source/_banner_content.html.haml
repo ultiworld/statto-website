@@ -1,0 +1,13 @@
+.banner-image
+.container-fluid
+  %header.text-center.text-md-left
+    .row
+      .col-md-8
+        .banner-title.text-left
+          = link_to data.app.url do
+            = image_tag '/apple-touch-icon.png', width: 102, height: 102, class: 'app-icon'
+          %h1= data.app.name
+          %p.tag-line= data.app.tag_line
+      .col-md-4.text-md-right
+        = link_to data.app.url, class: 'app-store-button' do
+          = retina_image_tag 'app-store.png', width: 219, height: 76
