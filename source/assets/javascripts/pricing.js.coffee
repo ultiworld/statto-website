@@ -1,8 +1,8 @@
 class Pricing
   @locales:
-    'en-gb': '£29.99'
-    'en-au': '$47.99'
-    'en-ca': '$41.99'
+    'en-gb': '£9.99'
+    'en-au': '$14.99'
+    'en-ca': '$13.99'
 
   @init: ->
     if price = Pricing.locales[navigator.language.toLowerCase()]
